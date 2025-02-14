@@ -13,99 +13,116 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    transition: background-color 0.3s ease; /* Плавная анимация фона */
 }
 
-.container {
-    max-width: 600px;
+/* Верхний текст */
+.header {
+    width: 100%;
     text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease; /* Плавная анимация при скролле */
+    padding: 1rem 0;
+    background-color: #1e1e1e;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards; /* Анимация появления заголовка */
-}
-
-p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeIn 1s ease 0.5s forwards; /* Анимация появления текста */
-}
-
-.links a {
-    color: #4285F4;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1.1rem;
-    transition: color 0.3s ease; /* Плавный переход цвета ссылок */
-}
-
-.links a:hover {
-    color: #ffffff;
+.header h2 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
 }
 
 /* Меню */
-.menu-button {
-    display: none; /* Скрыто на больших экранах */
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #4285F4;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease; /* Плавная анимация кнопки */
-}
-
-.menu-button:hover {
-    transform: scale(1.1); /* Увеличение при наведении */
-}
-
 .menu {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
-    transition: transform 0.3s ease; /* Плавная анимация меню */
 }
 
 .menu li {
-    transition: transform 0.3s ease; /* Плавная анимация пунктов меню */
+    transition: transform 0.3s ease;
 }
 
 .menu li:hover {
-    transform: scale(1.1); /* Увеличение при наведении */
+    transform: scale(1.1);
+}
+
+.menu a {
+    color: #4285F4;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+/* Контейнер с контентом */
+.container {
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Аватарка */
+.avatar {
+    margin-bottom: 2rem;
+}
+
+.avatar-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Круглая аватарка */
+    object-fit: cover;
+    border: 3px solid #4285F4;
+}
+
+/* Заголовок и описание */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.5s forwards;
+}
+
+/* Социальные кнопки */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    background-color: #4285F4;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: #ffffff;
+    color: #4285F4;
+    transform: scale(1.1);
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .menu {
-        display: none; /* Скрываем меню по умолчанию */
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #121212;
-        padding: 1rem;
-        z-index: 10;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease; /* Плавное появление меню */
-    }
-
-    .menu.active {
-        display: flex; /* Показываем меню при активации */
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
+        align-items: center;
+        gap: 0.5rem;
     }
 
     .menu li {
@@ -114,10 +131,6 @@ p {
 
     .menu a {
         font-size: 1.2rem;
-    }
-
-    .menu-button {
-        display: block; /* Показываем кнопку гамбургера */
     }
 }
 
@@ -136,8 +149,3 @@ p {
         opacity: 0;
         transform: translateY(20px);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
