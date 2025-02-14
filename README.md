@@ -17,14 +17,15 @@
             background-color: #121212;
             color: #ffffff;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            text-align: center;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 600px;
+            text-align: center;
+            padding: 20px;
         }
 
         h1 {
@@ -37,20 +38,78 @@
             margin-bottom: 2rem;
         }
 
-        .links a {
-            color: #4285F4; /* Цвет ссылок */
+        /* Меню */
+        .menu-button {
+            display: none; /* Скрыто на больших экранах */
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #4285F4;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .menu a {
+            color: #4285F4;
             text-decoration: none;
-            margin: 0 1rem;
             font-size: 1.1rem;
             transition: color 0.3s ease;
         }
 
-        .links a:hover {
+        .menu a:hover {
             color: #ffffff;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Скрываем меню по умолчанию */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #121212;
+                padding: 1rem;
+                z-index: 10;
+            }
+
+            .menu li {
+                margin: 0.5rem 0;
+            }
+
+            .menu a {
+                font-size: 1.2rem;
+            }
+
+            .menu-button {
+                display: block; /* Показываем кнопку гамбургера */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Кнопка гамбургера -->
+    <button class="menu-button" id="menuButton">☰</button>
+
+    <!-- Меню -->
+    <ul class="menu" id="menu">
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+        <li><a href="#blog">Блог</a></li>
+    </ul>
+
+    <!-- Основной контент -->
     <div class="container">
         <h1>Привет, я GlitchElite</h1>
         <p>Я — разработчик, специализирующийся на создании веб-сайтов.</p>
@@ -62,15 +121,19 @@
     </div>
 
     <script>
-        // JavaScript для анимации заголовка
-        document.addEventListener('DOMContentLoaded', function () {
-            const title = document.querySelector('h1');
-            title.style.opacity = 0;
+        // JavaScript для открытия/закрытия меню
+        const menuButton = document.getElementById('menuButton');
+        const menu = document.getElementById('menu');
 
-            setTimeout(() => {
-                title.style.transition = 'opacity 1s';
-                title.style.opacity = 1;
-            }, 500);
+        menuButton.addEventListener('click', () => {
+            menu.classList.toggle('active'); // Добавляем/удаляем класс active
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && event.target !== menuButton) {
+                menu.classList.remove('active');
+            }
         });
     </script>
 </body>
