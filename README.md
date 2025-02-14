@@ -3,7 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <title>GlitchElite</title>
+    <style>
+        /* Стили для сайта */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .links a {
+            color: #4285F4; /* Цвет ссылок */
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,47 +60,18 @@
             <a href="mailto:yourmail@example.com">Напишите мне</a>
         </div>
     </div>
+
+    <script>
+        // JavaScript для анимации заголовка
+        document.addEventListener('DOMContentLoaded', function () {
+            const title = document.querySelector('h1');
+            title.style.opacity = 0;
+
+            setTimeout(() => {
+                title.style.transition = 'opacity 1s';
+                title.style.opacity = 1;
+            }, 500);
+        });
+    </script>
 </body>
 </html>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-.container {
-    max-width: 600px;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.links a {
-    color: #4285F4; /* Цвет ссылок */
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.links a:hover {
-    color: #ffffff;
-}
