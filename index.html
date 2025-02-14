@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Кнопка гамбургера -->
-    <button class="menu-button" id="menuButton">☰</button>
+    <!-- Верхний текст -->
+    <div class="header">
+        <h2>GlitchEliteBio</h2>
+    </div>
 
     <!-- Меню -->
     <ul class="menu" id="menu">
@@ -21,15 +23,23 @@
 
     <!-- Основной контент -->
     <div class="container">
+        <!-- Аватарка -->
+        <div class="avatar">
+            <img src="avatar.jpg" alt="Аватарка" class="avatar-image">
+        </div>
+
+        <!-- Описание -->
         <h1>Привет, я GlitchElite</h1>
         <p>Я — разработчик, специализирующийся на создании веб-сайтов.</p>
-        <div class="links">
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <a href="mailto:yourmail@example.com">Напишите мне</a>
+
+        <!-- Социальные ссылки -->
+        <div class="social-links">
+            <a href="https://t.me/yourtelegram" target="_blank" class="social-button">Telegram</a>
+            <a href="https://youtube.com/yourchannel" target="_blank" class="social-button">YouTube</a>
+            <a href="https://github.com/yourusername" target="_blank" class="social-button">GitHub</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-button">LinkedIn</a>
+            <a href="mailto:yourmail@example.com" class="social-button">Напишите мне</a>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
