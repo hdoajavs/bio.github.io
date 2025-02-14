@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlitchElite</title>
     <style>
-        /* Стили для сайта */
+        /* Общие стили */
         * {
             margin: 0;
             padding: 0;
@@ -90,6 +90,10 @@
                 font-size: 1.2rem;
             }
 
+            .menu.active {
+                display: flex; /* Показываем меню при активации */
+            }
+
             .menu-button {
                 display: block; /* Показываем кнопку гамбургера */
             }
@@ -98,7 +102,7 @@
 </head>
 <body>
     <!-- Кнопка гамбургера -->
-    <button class="menu-button" id="menuButton">☰</button>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
 
     <!-- Меню -->
     <ul class="menu" id="menu">
@@ -121,20 +125,11 @@
     </div>
 
     <script>
-        // JavaScript для открытия/закрытия меню
-        const menuButton = document.getElementById('menuButton');
-        const menu = document.getElementById('menu');
-
-        menuButton.addEventListener('click', () => {
+        // Функция для открытия/закрытия меню
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
             menu.classList.toggle('active'); // Добавляем/удаляем класс active
-        });
-
-        // Закрытие меню при клике вне его
-        document.addEventListener('click', (event) => {
-            if (!menu.contains(event.target) && event.target !== menuButton) {
-                menu.classList.remove('active');
-            }
-        });
+        }
     </script>
 </body>
 </html>
