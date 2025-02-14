@@ -7,53 +7,22 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
     color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Верхний текст */
-.header {
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #1e1e1e;
-}
-
-.header h2 {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-}
-
-/* Меню */
-.menu {
-    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Для видеофона */
 }
 
-.menu li {
-    transition: transform 0.3s ease;
-}
-
-.menu li:hover {
-    transform: scale(1.1);
-}
-
-.menu a {
-    color: #4285F4;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.menu a:hover {
-    color: #ffffff;
+/* Видеофон */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Чтобы видео было за контентом */
 }
 
 /* Контейнер с контентом */
@@ -61,6 +30,9 @@ body {
     max-width: 600px;
     text-align: center;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для контента */
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Размытие фона */
 }
 
 /* Аватарка */
@@ -101,7 +73,7 @@ p {
 }
 
 .social-button {
-    background-color: #4285F4;
+    background-color: rgba(66, 133, 244, 0.7); /* Полупрозрачные кнопки */
     color: #ffffff;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -112,25 +84,22 @@ p {
 }
 
 .social-button:hover {
-    background-color: #ffffff;
-    color: #4285F4;
+    background-color: rgba(66, 133, 244, 1); /* Более непрозрачный цвет при наведении */
     transform: scale(1.1);
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
+    .container {
+        padding: 15px;
     }
 
-    .menu li {
-        margin: 0.5rem 0;
+    h1 {
+        font-size: 2rem;
     }
 
-    .menu a {
-        font-size: 1.2rem;
+    p {
+        font-size: 1rem;
     }
 }
 
@@ -149,3 +118,8 @@ p {
         opacity: 0;
         transform: translateY(20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
