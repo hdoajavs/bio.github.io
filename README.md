@@ -1,5 +1,6 @@
-/bio.github.io
+/bio.io
 ├── index.html       // Главная страница
+├── CNAME
 ├── styles.css       // Ваш CSS-файл
 ├── script.js        // Аминации
 └── assets/          // Дополнительные папки (если нужны)
